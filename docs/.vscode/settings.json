@@ -1,0 +1,4 @@
+{
+    "restructuredtext.confPath" : "source/conf.py",
+    "restructuredtext.builtDocumentationPath" : "build/html"
+}

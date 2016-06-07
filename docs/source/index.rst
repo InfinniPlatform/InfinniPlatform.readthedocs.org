@@ -3,27 +3,30 @@
 
 Данная статья поможет сделать вам необходимые предустановки для начала разработки на базе InfinniPlatform.
 
-Начало разработки
+Пример приложения
 -----------------
 
 Склонируйте пример приложения:
 
-.. sourcecode:: bash
+.. code-block:: bash
+
     > git clone https://github.com/InfinniPlatform/InfinniPlatform.Northwind.git
 
 Откройте файл решения ``InfinniPlatform.Northwind.sln`` в Visual Studio и запустите его на выполнение (``F5``).
 
 Проверьте работоспособность приложения:
 
-.. sourcecode:: bash
+.. code-block:: bash
+
     > curl http://localhost:9900
 
-Развертывание приложения
-------------------------
+Пример развертывания
+--------------------
 
 Установите утилиту для развертывания приложений InfinniPlatform:
 
-.. sourcecode:: bash
+.. code-block:: bash
+
     > nuget install "Infinni.Node" -Version "1.0.9.4-master" -OutputDirectory "packages" -NonInteractive -Prerelease -Source "http://nuget.org/api/v2;http://nuget.infinnity.ru/api/v2"
     > powershell -NoProfile -ExecutionPolicy Bypass -Command ".\packages\Infinni.Node.1.0.9.4-master\lib\net45\Install.ps1"
     > rd /s /q packages
@@ -31,17 +34,20 @@
 
 Установите нужную версию своего приложения:
 
-.. sourcecode:: bash
+.. code-block:: bash
+
     > Infinni.Node.exe install -i "InfinniPlatform.Northwind" -p
 
 Запустите нужную версию своего приложения:
 
-.. sourcecode:: bash
+.. code-block:: bash
+
     > Infinni.Node.exe start -i "InfinniPlatform.Northwind"
 
 Проверьте работоспособность приложения:
 
-.. sourcecode:: bash
+.. code-block:: bash
+
     > curl http://localhost:9900
 
 Необходимые предустановки
@@ -80,4 +86,4 @@
 .. _Mono 4.2: http://www.mono-project.com/download/
 .. _MongoDB: https://www.mongodb.com/download-center
 .. _RabbitMQ: https://www.rabbitmq.com/download.html
-.. _Redis: 
+.. _Redis: http://redis.io/download

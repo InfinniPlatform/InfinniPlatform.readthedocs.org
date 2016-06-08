@@ -1,7 +1,7 @@
 Начало работы
 =============
 
-Данная статья поможет сделать вам необходимые предустановки для начала разработки на базе InfinniPlatform.
+Данная статья поможет сделать необходимые предустановки для начала разработки на базе InfinniPlatform.
 
 Пример приложения
 -----------------
@@ -27,10 +27,10 @@
 
 .. code-block:: bash
 
-    > nuget install "Infinni.Node" -Version "1.0.9.4-master" -OutputDirectory "packages" -NonInteractive -Prerelease -Source "http://nuget.org/api/v2;http://nuget.infinnity.ru/api/v2"
-    > powershell -NoProfile -ExecutionPolicy Bypass -Command ".\packages\Infinni.Node.1.0.9.4-master\lib\net45\Install.ps1"
+    > nuget install "Infinni.Node" -Version "1.0.9.5-master" -OutputDirectory "packages" -NonInteractive -Prerelease -Source "http://nuget.org/api/v2;http://nuget.infinnity.ru/api/v2"
+    > powershell -NoProfile -ExecutionPolicy Bypass -Command ".\packages\Infinni.Node.1.0.9.5-master\lib\net45\Install.ps1"
     > rd /s /q packages
-    > cd Infinni.Node.1.0.9.4-master
+    > cd Infinni.Node.1.0.9.5-master
 
 Установите нужную версию своего приложения:
 

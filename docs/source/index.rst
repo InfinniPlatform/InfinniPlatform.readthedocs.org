@@ -1,7 +1,7 @@
 Документация InfinniPlatform
 ============================
 
-.. image:: logo.png
+.. image:: _images/logo.png
 
 InfinniPlatform - это высокоуровневое решение, предназначенное для быстрой разработки современных
 и высокопроизводительных программных продуктов. InfinniPlatform предлагает разработчику единое,
@@ -24,7 +24,22 @@ InfinniPlatform предоставляется по лицензии AGPLv3_. Э
 .. toctree::
    :maxdepth: 3
 
-   getting-started/index.rst
+   00-getting-started/index.rst
+   01-dynamic/index.rst
+   02-ioc/index.rst
+   03-hosting/index.rst
+   04-settings/index.rst
+   05-logging/index.rst
+   06-serialization/index.rst
+   07-services/index.rst
+   08-document-storage/index.rst
+   09-document-services/index.rst
+   10-blob-storage/index.rst
+   11-cache/index.rst
+   12-queues/index.rst
+   13-print-view/index.rst
+   14-security/index.rst
+   14-security/index.rst
 
 Указатель и содержание
 ======================

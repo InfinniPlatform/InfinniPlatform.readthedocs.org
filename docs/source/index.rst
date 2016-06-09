@@ -1,89 +1,40 @@
-Начало работы
-=============
+Документация InfinniPlatform
+============================
 
-Данная статья поможет сделать необходимые предустановки для начала разработки на базе InfinniPlatform.
+.. image:: logo.png
 
-Пример приложения
------------------
+InfinniPlatform - это высокоуровневое решение, предназначенное для быстрой разработки современных
+и высокопроизводительных программных продуктов. InfinniPlatform предлагает разработчику единое,
+целостное решение, охватывающее большую часть проблем, с которыми можно столкнуться при решении
+прикладных задач. InfinniPlatform это не просто высокоуровневый framework, это в первую очередь
+готовая инфраструктура, которая упрощает не только процесс разработки, но и развертывания. Стек
+решений InfinniPlatform включает специализированные средства, которые позволяют автоматизировать
+процесс развертывания приложений в кластерной инфрастурктуре и удобным образом администрировать
+различные версии ваших приложений.
 
-Склонируйте пример приложения:
+InfinniPlatform является проектом с открытым исходным кодом и разрабатывается на базе .NET Framework.
+При этом решение является кроссплатформенным и способно работать под Linux/Mono. В основе решения
+лежат самые современные средства и технологии. Вот список основных продуктов, которые мы используем
+в своем решении: MongoDB_, RabbitMQ_, Redis_, ELK_.
 
-.. code-block:: bash
+InfinniPlatform предоставляется по лицензии AGPLv3_. Это значит, что вы можете использовать это
+решение абсолютно бесплатно и без ограничений. Более того, те программные продукты, которые мы
+используем также является бесплатными и свободными в использовании.
 
-    > git clone https://github.com/InfinniPlatform/InfinniPlatform.Northwind.git
+.. toctree::
+   :maxdepth: 3
 
-Откройте файл решения ``InfinniPlatform.Northwind.sln`` в Visual Studio и запустите его на выполнение (``F5``).
+   getting-started/index.rst
 
-Проверьте работоспособность приложения:
+Указатель и содержание
+======================
 
-.. code-block:: bash
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`
 
-    > curl http://localhost:9900
-
-Пример развертывания
---------------------
-
-Установите утилиту для развертывания приложений InfinniPlatform:
-
-.. code-block:: bash
-
-    > nuget install "Infinni.Node" -Version "1.0.9.5-master" -OutputDirectory "packages" -NonInteractive -Prerelease -Source "http://nuget.org/api/v2;http://nuget.infinnity.ru/api/v2"
-    > powershell -NoProfile -ExecutionPolicy Bypass -Command ".\packages\Infinni.Node.1.0.9.5-master\lib\net45\Install.ps1"
-    > rd /s /q packages
-    > cd Infinni.Node.1.0.9.5-master
-
-Установите нужную версию своего приложения:
-
-.. code-block:: bash
-
-    > Infinni.Node.exe install -i "InfinniPlatform.Northwind" -p
-
-Запустите нужную версию своего приложения:
-
-.. code-block:: bash
-
-    > Infinni.Node.exe start -i "InfinniPlatform.Northwind"
-
-Проверьте работоспособность приложения:
-
-.. code-block:: bash
-
-    > curl http://localhost:9900
-
-Необходимые предустановки
--------------------------
-
-Для разработчика
-~~~~~~~~~~~~~~~~
-
-- Клиент `Git`_
-- Клиент `NuGet`_
-- `Visual Studio Community`_
-
-Для развертывания на сервере Windows
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-- Windows Server 2008 R2 SP1 x64 или Windows Server 2008 SP2 x64
-- `Microsoft .NET Framework 4.5`_
-
-Для развертывания на сервере Linux
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-- Ubuntu 14.04.4 LTS x64
-- `Mono 4.2`_
-
-Дополнительное окружение
-~~~~~~~~~~~~~~~~~~~~~~~~
-
-- `MongoDB`_ (при использовании хранилища документов)
-- `RabbitMQ`_ (при использовании шины сообщений)  
-- `Redis`_ (при развертывании в кластере)
-
-.. _Git: https://git-scm.com/downloads
-.. _Nuget: https://dist.nuget.org/index.html
-.. _Visual Studio Community: https://www.visualstudio.com/ru-ru/products/visual-studio-community-vs.aspx
-.. _Microsoft .NET Framework 4.5: https://www.microsoft.com/ru-ru/download/details.aspx?id=30653
-.. _Mono 4.2: http://www.mono-project.com/download/
 .. _MongoDB: https://www.mongodb.com/download-center
 .. _RabbitMQ: https://www.rabbitmq.com/download.html
 .. _Redis: http://redis.io/download
+.. _ELK: https://www.elastic.co/products
+.. _AGPLv3: https://raw.githubusercontent.com/InfinniPlatform/InfinniPlatform/master/LICENSE

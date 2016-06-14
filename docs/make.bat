@@ -40,6 +40,7 @@ if "%1" == "help" (
 	echo.  doctest    to run all doctests embedded in the documentation if enabled
 	echo.  coverage   to run coverage check of the documentation if enabled
 	echo.  dummy      to check syntax errors of document sources
+	echo.  livehtml   to start sphinx-autobuild
 	goto end
 )
 
@@ -275,6 +276,14 @@ if "%1" == "dummy" (
 	if errorlevel 1 exit /b 1
 	echo.
 	echo.Build finished. Dummy builder generates no files.
+	goto end
+)
+
+if "%1" == "livehtml" (
+	start cmd /c sphinx-autobuild -B %ALLSPHINXOPTS% %BUILDDIR%/html
+	if errorlevel 1 exit /b 1
+	echo.
+	echo.sphinx-autobuild started.
 	goto end
 )
 

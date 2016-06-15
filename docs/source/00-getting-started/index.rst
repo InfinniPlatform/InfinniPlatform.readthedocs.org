@@ -61,13 +61,13 @@
 - `Visual Studio Community`_
 
 Для развертывания в Windows
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 - Windows Server 2008 R2 SP1 x64 или Windows Server 2008 SP2 x64
 - `Microsoft .NET Framework 4.5`_
 
 Для развертывания в Linux
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 - Ubuntu 14.04.4 LTS x64
 - `Mono 4.2`_

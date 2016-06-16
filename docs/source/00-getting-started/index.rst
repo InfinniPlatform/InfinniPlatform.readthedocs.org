@@ -58,12 +58,13 @@
 
 - Клиент `Git`_
 - Клиент `NuGet`_
+- Утилита `curl`_
 - `Visual Studio Community`_
 
 Для развертывания в Windows
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-- Windows Server 2008 R2 SP1 x64 или Windows Server 2008 SP2 x64
+- Windows Server 2008 R2 SP1 x64, Windows Server 2008 SP2 x64, Windows Server 2012 x64, Windows Server 2012 R2 x64
 - `Microsoft .NET Framework 4.5`_
 
 Для развертывания в Linux
@@ -82,6 +83,7 @@
 
 .. _Git: https://git-scm.com/downloads
 .. _Nuget: https://dist.nuget.org/index.html
+.. _curl: https://curl.haxx.se/download.html
 .. _Visual Studio Community: https://www.visualstudio.com/ru-ru/products/visual-studio-community-vs.aspx
 .. _Microsoft .NET Framework 4.5: https://www.microsoft.com/ru-ru/download/details.aspx?id=30653
 .. _Mono 4.2: http://www.mono-project.com/download/

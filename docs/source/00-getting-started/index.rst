@@ -27,10 +27,12 @@
 
 .. code-block:: bash
 
-    > nuget install "Infinni.Node" -Version "1.0.9.5-master" -OutputDirectory "packages" -NonInteractive -Prerelease -Source "http://nuget.org/api/v2;http://nuget.infinnity.ru/api/v2"
-    > powershell -NoProfile -ExecutionPolicy Bypass -Command ".\packages\Infinni.Node.1.0.9.5-master\lib\net45\Install.ps1"
-    > rd /s /q packages
-    > cd Infinni.Node.1.0.9.5-master
+    set INFINNI_NODE_VERSION=1.0.9.5-master
+
+    nuget install "Infinni.Node" -Version %INFINNI_NODE_VERSION% -OutputDirectory "packages" -NonInteractive -Prerelease -Source "http://nuget.org/api/v2;http://nuget.infinnity.ru/api/v2"
+    powershell -NoProfile -ExecutionPolicy Bypass -Command ".\packages\Infinni.Node.%INFINNI_NODE_VERSION%\lib\net45\Install.ps1"
+    rd /s /q packages
+    cd Infinni.Node.%INFINNI_NODE_VERSION%
 
 Установите нужную версию своего приложения:
 
@@ -77,7 +79,7 @@
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 - `MongoDB`_ (при использовании хранилища документов)
-- `RabbitMQ`_ (при использовании шины сообщений)  
+- `RabbitMQ`_ (при использовании шины сообщений)
 - `Redis`_ (при развертывании в кластере)
 - `ELK`_ (для мониторинга и диагностики)
 

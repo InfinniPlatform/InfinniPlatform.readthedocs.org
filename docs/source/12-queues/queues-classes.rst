@@ -10,7 +10,7 @@
 Отправитель сообщений
 ---------------------
 
-``ITaskProducer`` - интерфейс отправителя сообщений в :doc:`очередь задач <queues-types>`.
+Для отправки сообщений в :doc:`очередь задач <queues-types>` следует использовать интерфейс ``ITaskProducer``. 
 
 .. code-block:: csharp
    :emphasize-lines: 3,15,18
@@ -38,7 +38,7 @@
         }
     }
 
-``IBroadcastProducer`` - интерфейс отправителя сообщений в :doc:`широковещательную очередь <queues-types>`.
+Для отправки сообщений в :doc:`широковещательную очередь <queues-types>` следует использовать интерфейс ``IBroadcastProducer``.
 
 .. code-block:: csharp
    :emphasize-lines: 3,15,18
@@ -168,7 +168,8 @@
     {
         public class SomeMessage
         {
-            /* Сообщения этого типа будут отправлены в очередь с именем "InfinniPlatform.Northwind.Queues.SomeMessage" */
+            /* Сообщения этого типа будут отправлены в очередь с именем
+               "InfinniPlatform.Northwind.Queues.SomeMessage" */
         }
     }
 
@@ -181,6 +182,7 @@
     {
         protected override async Task Consume(Message<SomeMessage> message)
         {
-            /* Этот получатель будет обрабатывать только сообщения отправленные в очередь с именем "DynamicQueue" */
+            /* Этот получатель будет обрабатывать только сообщения
+               отправленные в очередь с именем "DynamicQueue" */
         }
     }

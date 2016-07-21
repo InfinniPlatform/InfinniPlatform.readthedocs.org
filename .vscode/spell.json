@@ -1,0 +1,41 @@
+{
+    "language": [
+        "en",
+        "ru"
+    ],
+    "ignoreWordsList": [
+        "vscode",
+        "Markdown",
+        "config",
+        "languageIDs",
+        "alefragnani",
+        "Config",
+        "json",
+        "ignoreWordsList",
+        "ignoreRegExp",
+        "mistakeTypeToStatus",
+        "markdown",
+        "excludeFilesList",
+        "csharp",
+        "Abc",
+        "InfinniPlatform",
+        "Сериализация",
+        "Northwind",
+        "Infinni"
+    ],
+    "languageIDs": [
+        "markdown",
+        "latex",
+        "plaintext",
+        "restructuredtext"
+    ],
+    "ignoreRegExp": [
+        "/`(kb.*?)`/g",
+        "/(http\\\\S*)/gm",
+        "/\\\\(.*.png\\\\)/g",
+        "/\\\\(.*.gif\\\\)/g",
+        "/\\\\(.*.md\\\\)/g",
+        "/\\\\(.*.jpg\\\\)/g",
+        "/^((`{3}\\\\s*)(\\\\w+)?(\\\\s*([\\\\w\\\\W]+?)\\\\n*)\\\\2)\\\\n*(?:[^\\\\S\\\\w\\\\s]|$)/gm"
+    ]
+}

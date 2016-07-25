@@ -23,11 +23,27 @@
 Пример развертывания
 --------------------
 
-Установите утилиту Infinni.Node для развертывания приложений на базе InfinniPlatform (:download:`скачать скрипт установки Infinni.Node <../_files/Infinni_Node_Install.bat>`). Пример установки:
+Установите утилиту Infinni.Node для развертывания приложений на базе InfinniPlatform
+(:download:`скачать скрипт установки Infinni.Node <../_files/Infinni_Node_Install.bat> для Windows`).
+
+По умолчанию устанавливается последняя версия утилиты:
 
 .. code-block:: bash
 
-    > Infinni_Node_Install.bat 1.1.0.9-master #'1.1.0.9-master' - версия утилиты Infinni.Node
+    > Infinni_Node_Install.bat # устанавливает последнюю версию утилиты Infinni.Node
+
+Однако можно установить любую `доступную версию <http://nuget.infinnity.ru/packages/Infinni.Node/>`_ утилиты: 
+
+.. code-block:: bash
+
+    > Infinni_Node_Install.bat 1.2.0.19-master # устанавливает версию '1.2.0.19-master' утилиты Infinni.Node
+
+После выполнения скрипта утилита Infinni.Node будет установлена в каталог с именем ``Infinni.Node.X.`` (где ``X`` - номер версии утилиты)
+на том же уровне, откуда был запущен скрипт установки. Перейдите в этот каталог:
+
+.. code-block:: bash
+
+    > cd Infinni.Node.1.2.0.19-master
 
 Установите нужную версию своего приложения:
 

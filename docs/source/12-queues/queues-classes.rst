@@ -10,7 +10,7 @@
 Отправитель сообщений
 ---------------------
 
-Для отправки сообщений в :doc:`очередь задач <queues-types>` следует использовать интерфейс ``ITaskProducer``. 
+Для отправки сообщений в :doc:`очередь задач <queues-types>` следует использовать интерфейс ``ITaskProducer``.
 
 .. code-block:: csharp
    :emphasize-lines: 3,15,18
@@ -137,8 +137,6 @@
     builder.RegisterConsumers(assembly);
 
 Для :doc:`регистрации в IoC-контейнере </02-ioc/container-builder>` определенных получателей следует явно регистрировать их типы, как в примере ниже.
-
-1. ``ITaskConsumer`` - для получателя сообщений из очереди задач.
 
 .. code-block:: csharp
    :emphasize-lines: 3,8

@@ -24,7 +24,7 @@
 --------------------
 
 Установите утилиту Infinni.Node для развертывания приложений на базе InfinniPlatform
-(:download:`скачать скрипт установки Infinni.Node <../_files/Infinni_Node_Install.bat> для Windows`).
+(:download:`скачать скрипт установки Infinni.Node для Windows <../_files/Infinni_Node_Install.bat>`).
 
 По умолчанию устанавливается последняя версия утилиты:
 
@@ -32,7 +32,7 @@
 
     > Infinni_Node_Install.bat # устанавливает последнюю версию утилиты Infinni.Node
 
-Однако можно установить любую `доступную версию <http://nuget.infinnity.ru/packages/Infinni.Node/>`_ утилиты: 
+Однако можно установить любую `доступную версию <http://nuget.infinnity.ru/packages/Infinni.Node/>`_ утилиты:
 
 .. code-block:: bash
 

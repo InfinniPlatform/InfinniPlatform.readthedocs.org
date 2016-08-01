@@ -21,7 +21,9 @@
         "InfinniPlatform",
         "Сериализация",
         "Northwind",
-        "Infinni"
+        "Infinni",
+        "ICache",
+        "AppExtension"
     ],
     "languageIDs": [
         "markdown",

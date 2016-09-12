@@ -41,7 +41,8 @@ InfinniPlatform предоставляется по лицензии AGPLv3_. Э
    14-view-engine/index.rst
    15-print-view/index.rst
    16-security/index.rst
-   17-deploy/index.rst
+   17-scheduler/index.rst
+   18-deploy/index.rst
 
 Указатель и содержание
 ======================

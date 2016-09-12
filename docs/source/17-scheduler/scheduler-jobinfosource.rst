@@ -53,9 +53,9 @@
 чтобы гарантировать их выполнение после перезапуска приложения. Например, в качестве таких заданий могут быть персональные
 напоминания пользователя или какие-либо иные задания, появление которых нельзя предсказать заранее.
 
-Планировщик задач InfinniPlatform имеет встроенный источник сохраненных заданий. Все задания, добавленные с помощью метода
-``IJobScheduler.AddOrUpdateJob()``, сохраняются в постоянное хранилище и учитываются при запуске приложения. Управление
-такими заданиями ничем не отличается от :doc:`управления </17-scheduler/scheduler-jobscheduler>` обычными заданиями,
+Планировщик задач InfinniPlatform имеет встроенный источник сохраненных заданий. Все задания, :ref:`добавленные <add-or-update-job>`
+с помощью метода ``IJobScheduler.AddOrUpdateJob()``, сохраняются в постоянное хранилище и учитываются при запуске приложения.
+Управление такими заданиями ничем не отличается от :doc:`управления </17-scheduler/scheduler-jobscheduler>` обычными заданиями,
 описанными в коде приложения.
 
 
@@ -77,8 +77,10 @@
         {
             var jobs = new[]
                        {
-                           // Задание с именем "SomeJob" будет выполняться ежедневно в 10:35 с помощью обработчика SomeJobHandler
-                           factory.CreateJobInfo<SomeJobHandler>("SomeJob", b => b.CronExpression(e => e.AtHourAndMinuteDaily(10, 35)))
+                           // Задание с именем "SomeJob" будет выполняться ежедневно
+                           // в 10:35 с помощью обработчика SomeJobHandler
+                           factory.CreateJobInfo<SomeJobHandler>("SomeJob",
+                               b => b.CronExpression(e => e.AtHourAndMinuteDaily(10, 35)))
                        };
 
             return Task.FromResult<IEnumerable<IJobInfo>>(jobs);

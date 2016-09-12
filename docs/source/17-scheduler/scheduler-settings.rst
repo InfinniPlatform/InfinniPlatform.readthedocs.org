@@ -34,8 +34,8 @@
 максимальное время хранения информации (в секундах) о вызове обработчиков заданий в :ref:`журнале планировщика заданий <job-instance>`.
 По умолчанию значение данного атрибута не задано (``null``) и время хранения записей журнала не ограничено.
 
-Автоматическую очистку журнала можно реализовать явно указав значение атрибута ``ExpireHistoryAfter``. Следующая конфигурация определяет,
-что журнал должен содержать информацию только за последние сутки (24 часа - 86400 секунд).
+Автоматическую очистку журнала можно реализовать, указав значение атрибута ``ExpireHistoryAfter``. Следующая конфигурация определяет,
+что журнал должен содержать информацию только за последние сутки (24 часа = 86400 секунд).
 
 .. code-block:: js
    :caption: AppExtension.json
@@ -50,36 +50,73 @@ REST-сервис планировщика заданий
 
 Планировщик заданий InfinniPlatform предоставляет административный REST-сервис, позволяющий контролировать состояние планировщика
 во время работы приложения, а также управлять заданиями. В целях обеспечения безопасности вызов сервисов возможен только с узла,
-на котором работает экземпляр приложения. Ниже приведена краткая информация по каждому из методов сервиса.
+на котором работает экземпляр приложения (``localhost``). Ниже приведена краткая информация по каждому из методов сервиса.
 
 .. http:get:: /scheduler/
 
     Определяет, запущен ли планировщик заданий, а также возвращает количество запланированных и приостановленных заданий.
 
-.. http:get:: /scheduler/jobs?state={planned|paused}&skip={skip}&take={take}
+    :resheader Content-Type: application/json
+    :statuscode 200: Нет ошибок
 
-    Возвращает список заданий, находящихся в указанном состоянии (запланированы - ``planned``, приостановлены - ``paused``).
+.. http:get:: /scheduler/jobs
 
-.. http:get:: /scheduler/jobs/{id}
+    Возвращает список заданий, находящихся в указанном состоянии.
+
+    :query string state: Опциональный. Одно из двух значение: ``planned`` или ``paused``.
+    :query int skip: Опциональный. По умолчанию - ``0``.
+    :query int take: Опциональный. По умолчанию - ``10``.
+    :resheader Content-Type: application/json
+    :statuscode 200: Нет ошибок
+
+.. http:get:: /scheduler/jobs/(string:id)
 
     Возвращает :doc:`информацию об указанном задании </17-scheduler/scheduler-jobinfo>`.
 
-.. http:post:: /scheduler/jobs/{id}
+    :param int id: Уникальный идентификатор задания.
+    :resheader Content-Type: application/json
+    :statuscode 200: Нет ошибок
+
+.. http:post:: /scheduler/jobs/(string:id)
 
     :ref:`Добавляет или обновляет <add-or-update-job>` указанное задание.
 
-.. http:delete:: /scheduler/jobs/{id}
+    :param int id: Уникальный идентификатор задания.
+    :form body: :doc:`Информация о задании </17-scheduler/scheduler-jobinfo>`.
+    :reqheader Content-Type: application/json
+    :resheader Content-Type: application/json
+    :statuscode 200: Нет ошибок
+
+.. http:delete:: /scheduler/jobs/(string:id)
 
     :ref:`Удаляет <delete-job>` указанное задание.
 
-.. http:post:: /scheduler/pause?ids={id,...}
+    :param int id: Уникальный идентификатор задания.
+    :resheader Content-Type: application/json
+    :statuscode 200: Нет ошибок
+
+.. http:post:: /scheduler/pause
 
     :ref:`Приостанавливает планирование <pause-job>` указанных заданий.
 
-.. http:post:: /scheduler/resume?ids={id,...}
+    :query string ids: Опциональный. Уникальные идентификаторы заданий через ``,``.
+    :resheader Content-Type: application/json
+    :statuscode 200: Нет ошибок
+
+.. http:post:: /scheduler/resume
 
     :ref:`Возобновляет планирование <resume-job>` указанных заданий.
 
-.. http:post:: /scheduler/trigger?ids={id,...}
+    :query string ids: Опциональный. Уникальные идентификаторы заданий через ``,``.
+    :resheader Content-Type: application/json
+    :statuscode 200: Нет ошибок
+
+.. http:post:: /scheduler/trigger
 
     :ref:`Вызывает досрочное выполнение <trigger-job>` указанных заданий.
+
+    :query string ids: Опциональный. Уникальные идентификаторы заданий через ``,``.
+    :form body: Данные для выполнения задания.
+    :reqheader Content-Type: application/json
+    :resheader Content-Type: application/json
+    :statuscode 200: Нет ошибок

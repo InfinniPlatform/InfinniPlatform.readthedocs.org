@@ -22,6 +22,7 @@
 
 .. toctree::
 
+    scheduler-gettingstarted.rst
     scheduler-jobinfo.rst
     scheduler-cronexpression.rst
     scheduler-jobhandler.rst

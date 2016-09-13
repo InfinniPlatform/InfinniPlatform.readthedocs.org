@@ -73,7 +73,7 @@ REST-сервис планировщика заданий
 
     Возвращает :doc:`информацию об указанном задании </17-scheduler/scheduler-jobinfo>`.
 
-    :param int id: Уникальный идентификатор задания.
+    :param string id: Уникальный идентификатор задания.
     :resheader Content-Type: application/json
     :statuscode 200: Нет ошибок
 
@@ -81,7 +81,7 @@ REST-сервис планировщика заданий
 
     :ref:`Добавляет или обновляет <add-or-update-job>` указанное задание.
 
-    :param int id: Уникальный идентификатор задания.
+    :param string id: Уникальный идентификатор задания.
     :form body: :doc:`Информация о задании </17-scheduler/scheduler-jobinfo>`.
     :reqheader Content-Type: application/json
     :resheader Content-Type: application/json

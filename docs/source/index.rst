@@ -22,7 +22,7 @@ InfinniPlatform предоставляется по лицензии AGPLv3_. Э
 используем, также являются бесплатными и свободными в использовании.
 
 .. toctree::
-   :maxdepth: 3
+   :maxdepth: 2
 
    00-getting-started/index.rst
    01-dynamic/index.rst
@@ -43,6 +43,7 @@ InfinniPlatform предоставляется по лицензии AGPLv3_. Э
    16-security/index.rst
    17-scheduler/index.rst
    18-deploy/index.rst
+   release-notes/index.rst
 
 Указатель и содержание
 ======================

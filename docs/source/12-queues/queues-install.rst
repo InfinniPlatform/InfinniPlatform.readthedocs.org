@@ -20,12 +20,15 @@
 
     > rabbitmq-plugins enable rabbitmq_management
 
-По адресу http://localhost:15672 будет доступен сайт Management Plugin. Инструкции по его использованию доступны `на официальном сайте <https://www.rabbitmq.com/management.html>`_.
+По адресу http://localhost:15672 будет доступен сайт Management Plugin.
+Инструкции по его использованию доступны `на официальном сайте <https://www.rabbitmq.com/management.html>`_.
+
+.. _queue-settings:
 
 Настройки RabbitMQ в AppExtension.json
 --------------------------------------
 
-Ниже приведен пример настройки RabbitMQ в :doc:`файле конфигурации приложения </04-settings/index>`. 
+Ниже приведен пример настройки RabbitMQ в :doc:`файле конфигурации приложения </04-settings/index>`.
 
 .. code-block:: javascript
 
@@ -34,13 +37,17 @@
       "Port": 5672,
       "UserName": "guest",
       "Password": "guest",
-      "ManagementApiPort": 15672
+      "ManagementApiPort": 15672б
+      "PrefetchCount": 1000,
+      "MaxConcurrentThreads": 200
     }
 
 В приведенном примере:
 
-* *HostName* - имя сервера, где установлен RabbitMQ
-* *Port* - номер порта для доступа к RabbitMQ
-* *UserName* - имя пользователя RabbitMQ
-* *Password* - пароль пользователя RabbitMQ
-* *ManagementApiPort* - номер порта для доступа к Management API
+* *HostName* - имя сервера, где установлен RabbitMQ.
+* *Port* - номер порта для доступа к RabbitMQ.
+* *UserName* - имя пользователя RabbitMQ.
+* *Password* - пароль пользователя RabbitMQ.
+* *ManagementApiPort* - номер порта для доступа к Management API.
+* *PrefetchCount* - количество сообщений, единовременно передаваемых получателю. При значении 0 очередь будет передавать все доступные сообщения получателю.
+* *MaxConcurrentThreads* - Максимальное количество потоков обработки сообщений.

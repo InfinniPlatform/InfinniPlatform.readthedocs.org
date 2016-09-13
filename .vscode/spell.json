@@ -40,7 +40,8 @@
         "IJobInfoFactory",
         "CreateJobInfo",
         "csv",
-        "cron"
+        "cron",
+        "Nuget"
     ],
     "languageIDs": [
         "markdown",

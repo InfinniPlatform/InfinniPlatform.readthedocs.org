@@ -26,19 +26,51 @@ InfinniPlatform и теперь предоставляется в виде от�
 представления можно хранить где угодно, например, в ресурсах самого приложения.
 
 .. code-block:: csharp
-   :emphasize-lines: 11
+   :emphasize-lines: 17,20
+
+    IPrintViewBuilder printViewBuilder;
+
+    ...
+
+    // Поток для записи печатного представления
+    Stream printView;
 
     // Данные печатного представления
-    object printViewSource;
-    
+    object dataSource;
+
     // Сборка, содержащая в ресурсах шаблон печатного представления
     Assembly resourceAssembly;
-    
+
+    ...
+
     // Получение шаблона печатного представления по имени ресурса
-    var printViewTemplate = resourceAssembly.GetManifestResourceStream("<PRINT VIEW RESOURCE>");
-    
+    Func<Stream> template = () => resourceAssembly.GetManifestResourceStream("<PRINT VIEW RESOURCE>");
+
     // Создание печатного представления по шаблону и данным
-    var printView = _printViewBuilder.Build(printViewTemplate, printViewSource, PrintViewFileFormat.Pdf);
+    await printViewBuilder.Build(printView, template, dataSource, PrintViewFileFormat.Pdf);
+
+Для оптимизации работы HTTP-обработчиков, результатом работы которых являются печатные представления,
+был добавлен класс ``InfinniPlatform.PrintView.Contract.PrintViewHttpResponse``. Благодаря этому формируемое
+представление сразу выводится в выходной поток запроса, минимизируя время ожидания ответа и потребление
+памяти на сервере (по сравнению с предыдущей реализацией).
+
+.. code-block:: csharp
+   :emphasize-lines: 14
+
+    IPrintViewBuilder printViewBuilder;
+
+    ...
+
+    // Шаблон печатного представления
+    Func<Stream> template;
+
+    // Данные печатного представления
+    object dataSource;
+
+    ...
+
+    // HTTP-ответ с печатным представлением
+    var response = new PrintViewHttpResponse(printViewBuilder, template, dataSource);
 
 
 .. _`Package Manager Console`: http://docs.nuget.org/consume/package-manager-console

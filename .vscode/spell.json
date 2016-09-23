@@ -41,7 +41,8 @@
         "CreateJobInfo",
         "csv",
         "cron",
-        "Nuget"
+        "PrintView",
+        "NuGet"
     ],
     "languageIDs": [
         "markdown",

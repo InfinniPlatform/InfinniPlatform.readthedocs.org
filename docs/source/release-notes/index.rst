@@ -6,5 +6,5 @@
 .. toctree::
    :maxdepth: 1
 
-   v1.10.0.rst
    v1.11.0.rst
+   v1.10.0.rst

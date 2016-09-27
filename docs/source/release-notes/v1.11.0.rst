@@ -88,4 +88,25 @@ InfinniPlatform.Watcher
 Теперь новые версии этого пакета будут выходить вместе с новыми версиями ``InfinniPlatform``.
 
 
+SerializerVisibleAttribute
+--------------------------
+
+Появился атрибут ``InfinniPlatform.Sdk.Serialization.SerializerVisibleAttribute``, позволяющий добавлять
+в список сериализуемых членов типа закрытые поля и свойства. Например, вы можете запретить изменять значения
+определенного свойства в коде или сделать его недоступным на уровне пользователя вашего типа, используя
+модификаторы доступа ``private`` или ``internal``, но при этом разрешить сериализацию этого свойства
+с помощью атрибута ``SerializerVisibleAttribute``.
+
+.. code-block:: csharp
+   :emphasize-lines: 3
+
+    public class Document
+    {
+        [SerializerVisible]
+        public DocumentHeader _header { get; internal set; }
+
+        // ...
+    }
+
+
 .. _`Package Manager Console`: http://docs.nuget.org/consume/package-manager-console

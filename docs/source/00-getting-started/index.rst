@@ -69,6 +69,7 @@
 Для разработчика
 ~~~~~~~~~~~~~~~~
 
+- `PowerShell`_ 3.0 (и выше)
 - Клиент `Git`_
 - Клиент `NuGet`_
 - Утилита `curl`_
@@ -94,6 +95,7 @@
 - `Redis`_ (при развертывании в кластере)
 - `ELK`_ (для мониторинга и диагностики)
 
+.. _PowerShell: https://msdn.microsoft.com/en-us/powershell
 .. _Git: https://git-scm.com/downloads
 .. _Nuget: https://dist.nuget.org/index.html
 .. _curl: https://curl.haxx.se/download.html
